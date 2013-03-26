@@ -20,6 +20,7 @@
 
 #include "graphicsvideosurface.h"
 #include <QtWidgets/QGraphicsWidget>
+#include <QtCore/QPointer>
 
 namespace QGst {
 namespace Ui {
@@ -50,7 +51,7 @@ public:
     void setSurface(GraphicsVideoSurface *surface);
 
 private:
-    QWeakPointer<GraphicsVideoSurface> m_surface;
+    QPointer<GraphicsVideoSurface> m_surface;
 };
 
 } // namespace Ui

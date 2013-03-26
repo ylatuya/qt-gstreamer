@@ -19,7 +19,7 @@
 #define QWIDGET_VIDEO_SINK_DELEGATE_H
 
 #include "qtvideosinkdelegate.h"
-#include <QtCore/QWeakPointer>
+#include <QtCore/QPointer>
 #include <QtCore/QEvent>
 #include <QtWidgets/QWidget>
 
@@ -40,7 +40,7 @@ protected:
 
 private:
     // "widget" property
-    QWeakPointer<QWidget> m_widget;
+    QPointer<QWidget> m_widget;
 
     // original value of the Qt::WA_OpaquePaintEvent attribute
     bool m_opaquePaintEventAttribute;

@@ -56,7 +56,6 @@ public:
         : QObject(parent)
     {
         m_windowId = widget()->winId(); //create a new X window (if we are on X11 with alien widgets)
-        QApplication::syncX(); //inform other applications about the new window (on X11)
 
         widget()->installEventFilter(this);
         widget()->setAttribute(Qt::WA_NoSystemBackground, true);
