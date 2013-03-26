@@ -19,7 +19,7 @@
 #define QGST_UI_GRAPHICSVIDEOWIDGET_H
 
 #include "graphicsvideosurface.h"
-#include <QtGui/QGraphicsWidget>
+#include <QtWidgets/QGraphicsWidget>
 
 namespace QGst {
 namespace Ui {

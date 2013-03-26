@@ -19,14 +19,14 @@
 #define VIDEOITEM_H
 
 #include "../QGst/Ui/graphicsvideosurface.h"
-#include <QtDeclarative/QDeclarativeItem>
+#include <QtQuick/QQuickItem>
 
-class VideoItem : public QDeclarativeItem
+class VideoItem : public QQuickItem
 {
     Q_OBJECT
     Q_PROPERTY(QGst::Ui::GraphicsVideoSurface* surface READ surface WRITE setSurface)
 public:
-    explicit VideoItem(QDeclarativeItem *parent = 0);
+    explicit VideoItem(QQuickItem *parent = 0);
     virtual ~VideoItem();
 
     QGst::Ui::GraphicsVideoSurface *surface() const;

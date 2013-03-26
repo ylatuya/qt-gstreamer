@@ -70,7 +70,7 @@ bool ObjectStore::take(const void * ptr)
     //Decrease our bindings (weak) reference count
     (gs->refCount[ptr]).deref();
 
-    if (!gs->refCount[ptr]) {
+    if (!gs->refCount[ptr].deref()) {
         //refCount is 0
         gs->refCount.remove(ptr);
         mustSubtractStrongRef = true;

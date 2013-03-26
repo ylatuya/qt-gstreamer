@@ -16,9 +16,9 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 #include "videoitem.h"
-#include <QtDeclarative/QDeclarativeExtensionPlugin>
+#include <QtQml/QQmlExtensionPlugin>
 
-class QtGStreamerPlugin : public QDeclarativeExtensionPlugin
+class QtGStreamerPlugin : public QQmlExtensionPlugin
 {
     Q_OBJECT
 public:
@@ -32,6 +32,6 @@ void QtGStreamerPlugin::registerTypes(const char *uri)
         QLatin1String("Creating a QGst::Ui::GraphicsVideoSurface from QML is not supported"));
 }
 
-Q_EXPORT_PLUGIN2(qtgstPlugin, QtGStreamerPlugin)
+//Q_EXPORT_PLUGIN2(qtgstPlugin, QtGStreamerPlugin)
 
 #include "plugin.moc"

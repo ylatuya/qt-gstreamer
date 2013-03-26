@@ -21,7 +21,7 @@
 #include "qtvideosinkdelegate.h"
 #include <QtCore/QWeakPointer>
 #include <QtCore/QEvent>
-#include <QtGui/QWidget>
+#include <QtWidgets/QWidget>
 
 class QWidgetVideoSinkDelegate : public QtVideoSinkDelegate
 {

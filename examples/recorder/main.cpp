@@ -18,9 +18,9 @@
 #include "ui_recorder.h"
 
 #include <QtCore/QDir>
-#include <QtGui/QApplication>
-#include <QtGui/QDialog>
-#include <QtGui/QMessageBox>
+#include <QtWidgets/QApplication>
+#include <QtWidgets/QDialog>
+#include <QtWidgets/QMessageBox>
 
 #include <QGlib/Error>
 #include <QGlib/Connect>

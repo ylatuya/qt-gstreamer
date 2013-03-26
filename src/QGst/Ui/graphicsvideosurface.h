@@ -20,7 +20,7 @@
 
 #include "global.h"
 #include "../element.h"
-#include <QtGui/QGraphicsView>
+#include <QtWidgets/QGraphicsView>
 
 namespace QGst {
 namespace Ui {

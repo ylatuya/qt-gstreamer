@@ -15,7 +15,7 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 #include "mediaapp.h"
-#include <QtGui/QApplication>
+#include <QtWidgets/QApplication>
 #include <QGst/Init>
 
 int main(int argc, char *argv[])

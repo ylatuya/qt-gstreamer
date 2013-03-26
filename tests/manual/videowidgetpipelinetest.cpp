@@ -19,7 +19,7 @@
 #include <QGst/Init>
 #include <QGst/Pipeline>
 #include <QGst/ElementFactory>
-#include <QtGui/QApplication>
+#include <QtWidgets/QApplication>
 
 class VideoWidgetPipelineTest : public QWidget
 {

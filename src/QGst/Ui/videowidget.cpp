@@ -29,8 +29,8 @@
 #include <QtGui/QPainter>
 #include <QtGui/QPaintEvent>
 #include <QtGui/QResizeEvent>
-#include <QtGui/QApplication>
-#include <QtGui/QHBoxLayout>
+#include <QtWidgets/QApplication>
+#include <QtWidgets/QHBoxLayout>
 
 #ifndef QTGSTREAMER_UI_NO_OPENGL
 # include <QtOpenGL/QGLWidget>

@@ -19,8 +19,8 @@
 #ifndef MEDIAAPP_H
 #define MEDIAAPP_H
 
-#include <QtGui/QWidget>
-#include <QtGui/QStyle>
+#include <QtWidgets/QWidget>
+#include <QtWidgets/QStyle>
 #include <QtCore/QTimer>
 
 class Player;

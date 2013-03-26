@@ -20,9 +20,9 @@
 #include <QGst/Pipeline>
 #include <QGst/ElementFactory>
 #include <QGst/VideoOrientation>
-#include <QtGui/QApplication>
-#include <QtGui/QMessageBox>
-#include <QtGui/QCheckBox>
+#include <QtWidgets/QApplication>
+#include <QtWidgets/QMessageBox>
+#include <QtWidgets/QCheckBox>
 
 class VideoOrientationTest : public QWidget
 {

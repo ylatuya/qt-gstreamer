@@ -18,10 +18,10 @@
 #include "videoitem.h"
 #include "../QGst/Ui/graphicsvideowidget.h"
 
-VideoItem::VideoItem(QDeclarativeItem *parent)
-    : QDeclarativeItem(parent)
+VideoItem::VideoItem(QQuickItem *parent)
+    : QQuickItem(parent)
 {
-    m_widget = new QGst::Ui::GraphicsVideoWidget(this);
+    m_widget = new QGst::Ui::GraphicsVideoWidget();
 }
 
 VideoItem::~VideoItem()
@@ -41,5 +41,5 @@ void VideoItem::setSurface(QGst::Ui::GraphicsVideoSurface *surface)
 void VideoItem::geometryChanged(const QRectF& newGeometry, const QRectF& oldGeometry)
 {
     m_widget->setGeometry(newGeometry);
-    QDeclarativeItem::geometryChanged(newGeometry, oldGeometry);
+    QQuickItem::geometryChanged(newGeometry, oldGeometry);
 }

@@ -49,8 +49,8 @@
 
 #include "ui_voip.h"
 
-#include <QtGui/QApplication>
-#include <QtGui/QDialog>
+#include <QtWidgets/QApplication>
+#include <QtWidgets/QDialog>
 
 #include <QGlib/Connect>
 #include <QGlib/Error>

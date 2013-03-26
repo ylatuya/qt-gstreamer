@@ -21,10 +21,10 @@
 #include <gst/video/video.h>
 #include <gst/interfaces/colorbalance.h>
 #include <QtTest/QTest>
-#include <QtGui/QWidget>
+#include <QtWidgets/QWidget>
 #include <QtGui/QPainter>
-#include <QtGui/QLabel>
-#include <QtGui/QGridLayout>
+#include <QtWidgets/QLabel>
+#include <QtWidgets/QGridLayout>
 #include <QtCore/QDebug>
 
 #ifndef GST_QT_VIDEO_SINK_NO_OPENGL
@@ -429,11 +429,11 @@ void QtVideoSinkTest::glSurfacePainterFormatsTest()
     QVERIFY(format != GST_VIDEO_FORMAT_UNKNOWN);
 
     if (glsl && !haveGlsl) {
-        QSKIP("Skipping because the system does not support GLSL", SkipSingle);
+        QSKIP("Skipping because the system does not support GLSL");
     }
 
     if (!glsl && !haveArbFp) {
-        QSKIP("Skipping because the system does not support ARB Fragment Programs", SkipSingle);
+        QSKIP("Skipping because the system does not support ARB Fragment Programs");
     }
 
     GstCaps *caps = BufferFormat::newCaps(format, QSize(100, 100), Fraction(1, 1), Fraction(1, 1));
@@ -613,7 +613,7 @@ void QtVideoSinkTest::qtVideoSinkTest()
             QVERIFY(context != 0);
         } else
 #endif
-            QSKIP("Skipping because we have no OpenGL support", SkipSingle);
+            QSKIP("Skipping because we have no OpenGL support");
     } else {
         widget.reset(new VideoWidget);
     }
@@ -754,7 +754,7 @@ void QtVideoSinkTest::qtVideoSinkTest()
     widget->show();
     widget->raise();
 
-    QTest::qWaitForWindowShown(widget.data());
+    QTest::qWaitForWindowActive(widget.data()->windowHandle());
 
     GstStateChangeReturn stateReturn = gst_element_set_state(
             GST_ELEMENT(pipeline.data()), GST_STATE_PAUSED);

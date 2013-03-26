@@ -21,7 +21,7 @@
 
 #include "global.h"
 #include "../element.h"
-#include <QtGui/QWidget>
+#include <QtWidgets/QWidget>
 
 namespace QGst {
 namespace Ui {

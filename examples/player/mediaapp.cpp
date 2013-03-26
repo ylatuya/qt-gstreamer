@@ -18,11 +18,11 @@
  */
 #include "mediaapp.h"
 #include "player.h"
-#include <QtGui/QBoxLayout>
-#include <QtGui/QFileDialog>
-#include <QtGui/QToolButton>
-#include <QtGui/QLabel>
-#include <QtGui/QSlider>
+#include <QtWidgets/QBoxLayout>
+#include <QtWidgets/QFileDialog>
+#include <QtWidgets/QToolButton>
+#include <QtWidgets/QLabel>
+#include <QtWidgets/QSlider>
 #include <QtGui/QMouseEvent>
 
 MediaApp::MediaApp(QWidget *parent)
