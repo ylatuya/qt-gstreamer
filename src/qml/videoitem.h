@@ -19,14 +19,26 @@
 #define VIDEOITEM_H
 
 #include "../QGst/Ui/graphicsvideosurface.h"
+#if (QT_VERSION >= QT_VERSION_CHECK(5, 0, 0))
 #include <QtQuick/QQuickItem>
+#else
+#include <QtDeclarative/QDeclarativeItem>
+#endif
 
+#if (QT_VERSION >= QT_VERSION_CHECK(5, 0, 0))
 class VideoItem : public QQuickItem
+#else
+class VideoItem : public QDeclarativeItem
+#endif
 {
     Q_OBJECT
     Q_PROPERTY(QGst::Ui::GraphicsVideoSurface* surface READ surface WRITE setSurface)
 public:
+#if (QT_VERSION >= QT_VERSION_CHECK(5, 0, 0))
     explicit VideoItem(QQuickItem *parent = 0);
+#else
+    explicit VideoItem(QDeclarativeItem *parent = 0);
+#endif
     virtual ~VideoItem();
 
     QGst::Ui::GraphicsVideoSurface *surface() const;

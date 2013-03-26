@@ -19,8 +19,12 @@
 #define QGST_UI_GRAPHICSVIDEOWIDGET_H
 
 #include "graphicsvideosurface.h"
+#if (QT_VERSION >= QT_VERSION_CHECK(5, 0, 0))
 #include <QtWidgets/QGraphicsWidget>
 #include <QtCore/QPointer>
+#else
+#include <QtGui/QGraphicsWidget>
+#endif
 
 namespace QGst {
 namespace Ui {
@@ -51,7 +55,11 @@ public:
     void setSurface(GraphicsVideoSurface *surface);
 
 private:
+#if (QT_VERSION >= QT_VERSION_CHECK(5, 0, 0))
     QPointer<GraphicsVideoSurface> m_surface;
+#else
+    QWeakPointer<GraphicsVideoSurface> m_surface;
+#endif
 };
 
 } // namespace Ui

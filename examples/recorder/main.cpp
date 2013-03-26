@@ -18,9 +18,15 @@
 #include "ui_recorder.h"
 
 #include <QtCore/QDir>
+#if (QT_VERSION >= QT_VERSION_CHECK(5, 0, 0))
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QDialog>
 #include <QtWidgets/QMessageBox>
+#else
+#include <QtGui/QApplication>
+#include <QtGui/QDialog>
+#include <QtGui/QMessageBox>
+#endif
 
 #include <QGlib/Error>
 #include <QGlib/Connect>

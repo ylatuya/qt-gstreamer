@@ -20,7 +20,11 @@
 
 #include "global.h"
 #include "../element.h"
+#if (QT_VERSION >= QT_VERSION_CHECK(5, 0, 0))
 #include <QtWidgets/QGraphicsView>
+#else
+#include <QtGui/QGraphicsView>
+#endif
 
 namespace QGst {
 namespace Ui {

@@ -19,9 +19,14 @@
 #ifndef MEDIAAPP_H
 #define MEDIAAPP_H
 
+#include <QtCore/QTimer>
+#if (QT_VERSION >= QT_VERSION_CHECK(5, 0, 0))
 #include <QtWidgets/QWidget>
 #include <QtWidgets/QStyle>
-#include <QtCore/QTimer>
+#else
+#include <QtGui/QWidget>
+#include <QtGui/QStyle>
+#endif
 
 class Player;
 class QBoxLayout;

@@ -18,8 +18,13 @@
 #include "videoitem.h"
 #include "../QGst/Ui/graphicsvideowidget.h"
 
+#if (QT_VERSION >= QT_VERSION_CHECK(5, 0, 0))
 VideoItem::VideoItem(QQuickItem *parent)
     : QQuickItem(parent)
+#else
+VideoItem::VideoItem(QDeclarativeItem *parent)
+    : QDeclarativeItem(parent)
+#endif
 {
     m_widget = new QGst::Ui::GraphicsVideoWidget();
 }
@@ -41,5 +46,9 @@ void VideoItem::setSurface(QGst::Ui::GraphicsVideoSurface *surface)
 void VideoItem::geometryChanged(const QRectF& newGeometry, const QRectF& oldGeometry)
 {
     m_widget->setGeometry(newGeometry);
+#if (QT_VERSION >= QT_VERSION_CHECK(5, 0, 0))
     QQuickItem::geometryChanged(newGeometry, oldGeometry);
+#else
+    QDeclarativeItem::geometryChanged(newGeometry, oldGeometry);
+#endif
 }
