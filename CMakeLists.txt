@@ -11,20 +11,23 @@ option(QTGSTREAMER_EXAMPLES "Build QtGStreamer's examples" ON)
 option(QTGSTREAMER_CODEGEN "Build and use QtGStreamer's codegen" OFF)
 option(USE_GST_PLUGIN_DIR "Install gstreamer plugins at the system location" ON)
 option(USE_QT_PLUGIN_DIR "Install qt plugins at the system location" ON)
+option(USE_QT_PLUGIN_DIR "Install qt plugins at the system location" ON)
+option(QT_VERSION "Qt version used for the build" 4)
 
 include(MacroLogFeature)
 
-find_package(Qt4 COMPONENTS QtCore QtGui)
-macro_log_feature(QT4_FOUND "Qt 4" "Required for building everything" "http://qt.nokia.com/" TRUE "4.7")
+include(QtHelpers)
+
+macro_log_feature(QT_FOUND "Qt" "Required for building everything" "http://qt.nokia.com/" TRUE "${QT_MIN_VERSION}")
 macro_log_feature(QT_QTOPENGL_FOUND "QtOpenGL"
                                     "Required for OpenGL acceleration in qtvideosink and QtGStreamerUi"
-                                    "http://qt.nokia.com/" FALSE "4.7")
+                                    "http://qt.nokia.com/" FALSE "${QT_MIN_VERSION}")
 macro_log_feature(QT_QTDECLARATIVE_FOUND "QtDeclarative" "Required for building QML support"
-                                         "http://qt.nokia.com/" FALSE "4.7")
+                                         "http://qt.nokia.com/" FALSE "${QT_MIN_VERSION}")
 
 if (QTGSTREAMER_TESTS)
     macro_log_feature(QT_QTTEST_FOUND "QtTest" "Required for building unit tests"
-                                      "http://qt.nokia.com/" FALSE "4.7")
+                                      "http://qt.nokia.com/" FALSE "${QT_MIN_VERSION}")
     if (NOT QT_QTTEST_FOUND)
         set(QTGSTREAMER_TESTS OFF)
     endif()

@@ -1,3 +1,4 @@
+set(CMAKE_CXX_FLAGS "-fPIE")
 macro(example_distcheck example)
     add_custom_target(example_${example}_distcheck
         ${CMAKE_COMMAND}
@@ -17,7 +18,9 @@ macro(example_distcheck example)
     add_dependencies(examples_distcheck example_${example}_distcheck)
 endmacro()
 
-add_subdirectory(player)
+if (QT_QTOPENGL_FOUND)
+    add_subdirectory(player)
+endif()
 example_distcheck(player)
 
 add_subdirectory(appsink-src)
@@ -29,7 +32,7 @@ example_distcheck(recorder)
 add_subdirectory(voip)
 example_distcheck(voip)
 
-if (QT_QTDECLARATIVE_FOUND)
-    add_subdirectory(qmlplayer)
-endif()
+#if (QT_QTDECLARATIVE_FOUND)
+#    add_subdirectory(qmlplayer)
+#endif()
 example_distcheck(qmlplayer)

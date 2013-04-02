@@ -14,11 +14,11 @@ if (NOT BUILDING_QTGSTREAMER)
     endif()
 endif()
 
-include_directories(${QTGSTREAMER_INCLUDES} ${CMAKE_CURRENT_BINARY_DIR})
+include_directories(${QTGSTREAMER_INCLUDES} ${CMAKE_CURRENT_BINARY_DIR} ${QT_QTWIDGETS_INCLUDE_DIRS})
 add_definitions(${QTGSTREAMER_DEFINITIONS})
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${QTGSTREAMER_FLAGS}")
 
 set(player_SOURCES main.cpp player.cpp mediaapp.cpp)
 
 automoc4_add_executable(player ${player_SOURCES})
-target_link_libraries(player ${QTGSTREAMER_UI_LIBRARIES})
+target_link_libraries(player ${QTGSTREAMER_UI_LIBRARIES} ${QT_QTOPENGL_LIBRARIES} ${QT_QTWIDGETS_LIBRARIES})

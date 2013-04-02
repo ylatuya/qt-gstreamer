@@ -7,9 +7,9 @@ if (NOT BUILDING_QTGSTREAMER)
     find_package(QtGStreamer REQUIRED)
 endif()
 
-include_directories(${QTGSTREAMER_INCLUDES})
+include_directories(${QTGSTREAMER_INCLUDES} ${QT_QTCORE_INCLUDE_DIRS})
 add_definitions(${QTGSTREAMER_DEFINITIONS})
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${QTGSTREAMER_FLAGS}")
 
 add_executable(appsink-src main.cpp)
-target_link_libraries(appsink-src ${QTGSTREAMER_UTILS_LIBRARIES})
+target_link_libraries(appsink-src ${QTGSTREAMER_UTILS_LIBRARIES} ${QT_QTCORE_LIBRARIES})

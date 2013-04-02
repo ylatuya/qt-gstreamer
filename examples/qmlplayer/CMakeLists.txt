@@ -42,7 +42,7 @@ else()
 endif()
 
 set(qmlplayer_SOURCES main.cpp player.cpp)
-qt4_add_resources(qmlplayer_rcc_SOURCES qmlplayer.qrc)
+qt_helper_add_resources(qmlplayer_rcc_SOURCES qmlplayer.qrc)
 
 automoc4_add_executable(qmlplayer
     ${qmlplayer_SOURCES}
