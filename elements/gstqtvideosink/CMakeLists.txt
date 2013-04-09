@@ -1,4 +1,4 @@
-include_directories(${CMAKE_CURRENT_BINARY_DIR})
+include_directories(${CMAKE_CURRENT_BINARY_DIR} ${QT_QTCORE_INCLUDE_DIRS})
 
 glib2_genmarshal(gstqtvideosinkmarshal
     VOID:POINTER,FLOAT,FLOAT,FLOAT,FLOAT
@@ -31,7 +31,6 @@ if (QT_QTOPENGL_FOUND AND (OPENGL_FOUND OR OPENGLES2_FOUND))
         openglsurfacepainter.cpp
     )
 
-    include_directories(${QT_QTCORE_INCLUDE_DIRS})
     if (OPENGLES2_FOUND)
         set(GstQtVideoSink_GL_LIBS ${OPENGLES2_LIBRARY} ${QT_QTOPENGL_LIBRARY})
         include_directories(${OPENGLES2_INCLUDE_DIR} ${QT_QTCORE_INCLIDE_DIRS} ${QT_QTOPENGL_INCLUDE_DIR})
