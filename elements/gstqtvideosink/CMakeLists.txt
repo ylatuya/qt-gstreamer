@@ -31,9 +31,10 @@ if (QT_QTOPENGL_FOUND AND (OPENGL_FOUND OR OPENGLES2_FOUND))
         openglsurfacepainter.cpp
     )
 
+    include_directories(${QT_QTCORE_INCLUDE_DIRS})
     if (OPENGLES2_FOUND)
         set(GstQtVideoSink_GL_LIBS ${OPENGLES2_LIBRARY} ${QT_QTOPENGL_LIBRARY})
-        include_directories(${OPENGLES2_INCLUDE_DIR} ${QT_QTOPENGL_INCLUDE_DIR})
+        include_directories(${OPENGLES2_INCLUDE_DIR} ${QT_QTCORE_INCLIDE_DIRS} ${QT_QTOPENGL_INCLUDE_DIR})
     else()
         set(GstQtVideoSink_GL_LIBS ${OPENGL_gl_LIBRARY} ${QT_QTOPENGL_LIBRARY})
         include_directories(${OPENGL_INCLUDE_DIR} ${QT_QTOPENGL_INCLUDE_DIR})
@@ -44,8 +45,8 @@ endif()
 
 automoc4_add_library(gstqtvideosink MODULE ${GstQtVideoSink_SRCS} ${GstQtVideoSink_GL_SRCS})
 target_link_libraries(gstqtvideosink
-    ${QT_QTCORE_LIBRARY}
-    ${QT_QTGUI_LIBRARY}
+    ${QT_QTCORE_LIBRARIES}
+    ${QT_QTGUI_LIBRARIES}
     ${GOBJECT_LIBRARIES}
     ${GSTREAMER_LIBRARY}
     ${GSTREAMER_BASE_LIBRARY}
@@ -66,8 +67,8 @@ if (QTGSTREAMER_TESTS)
     )
     target_link_libraries(qtvideosink_autotest
         ${QT_QTTEST_LIBRARY}
-        ${QT_QTCORE_LIBRARY}
-        ${QT_QTGUI_LIBRARY}
+        ${QT_QTCORE_LIBRARIES}
+        ${QT_QTGUI_LIBRARIES}
         ${GOBJECT_LIBRARIES}
         ${GSTREAMER_LIBRARY}
         ${GSTREAMER_BASE_LIBRARY}
