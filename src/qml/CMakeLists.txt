@@ -3,7 +3,7 @@ set(QtGStreamerQML_SRCS
     videoitem.cpp
 )
 
-include_directories(${CMAKE_CURRENT_BINARY_DIR})
+include_directories(${CMAKE_CURRENT_BINARY_DIR} ${QT_QTCORE_INCLUDE_DIRS})
 automoc4_add_library(QtGStreamerQML MODULE ${QtGStreamerQML_SRCS})
 target_link_libraries(QtGStreamerQML
     ${QTGSTREAMER_UI_LIBRARIES}
